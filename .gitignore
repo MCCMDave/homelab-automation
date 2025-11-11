@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Logs
+*.log
+logs/
+*.txt
+!README.md
+!requirements.txt
+
+# Environment variables & secrets
+.env
+.env.local
+secrets/
+*.key
+*.pem
+credentials/
+
+# Virtual Environments
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup
+backups/
+
+# Data files (uncomment if needed)
+# *.csv
+# *.db
+# *.sqlite
+
+# Testing
+test-results/
+*.test
+
+# Temporary
+tmp/
+temp/
+*.tmp
