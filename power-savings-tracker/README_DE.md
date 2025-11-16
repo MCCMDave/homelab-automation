@@ -1,0 +1,154 @@
+# ⚡ Power Savings Tracker
+
+🇩🇪 Deutsche Version | **[🇬🇧 English Version](README.md)**
+
+---
+
+Ein einfaches Python-Tool zur Berechnung der Stromkosten-Ersparnis durch Solarstromerzeugung.
+
+---
+
+## 📖 Beschreibung
+
+Dieses Tool berechnet die Stromkosten-Ersparnis basierend auf der erzeugten Solarstrom-Menge (kWh) und speichert die Historie in einer CSV-Datei.
+
+---
+
+## ✨ Features
+
+- ✅ Berechnung der Ersparnis basierend auf aktuellem Strompreis
+- ✅ Automatischer CSV-Export mit Historie
+- ✅ Header-Erstellung bei neuer Datei
+- ✅ Datums-Stempel für jede Messung
+- ✅ Input-Validierung (nur Zahlen)
+- ✅ Error-Handling für ungültige Eingaben
+
+---
+
+## 🚀 Installation & Nutzung
+
+### Voraussetzungen:
+- Python 3.7 oder höher
+
+### Ausführung:
+```bash
+python power_savings_tracker.py
+```
+
+### Bedienung:
+1. Programm starten
+2. Erzeugte kWh eingeben
+3. Ersparnis wird angezeigt
+4. Daten werden in `historie.csv` gespeichert
+5. ENTER drücken zum Beenden
+
+---
+
+## 📊 Beispiel-Ausgabe
+
+```
+Wie viel kWh wurden erzeugt? 12.5
+
+Am 16.11.25 beträgt die Strompreis-Ersparnis: 3.65€
+
+Drücke ENTER, zum Schließen des Fensters.
+```
+
+---
+
+## 📁 Datei-Struktur
+
+### Erzeugte Dateien:
+- **historie.csv** - Speichert alle Messungen mit Datum
+
+### CSV-Format:
+```csv
+Datum; kWh; Ersparnis in €
+16.11.25; 12.50; 3.65
+17.11.25; 15.20; 4.43
+```
+
+---
+
+## ⚙️ Konfiguration
+
+### Strompreis anpassen:
+```python
+# Zeile 5 in power_savings_tracker.py:
+price = 0.2916  # Aktueller Strompreis in €/kWh
+```
+
+**Aktueller Preis:** 0,2916 €/kWh (Stand: November 2025)
+
+---
+
+## 🛠️ Technische Details
+
+### Genutzte Module:
+- `datetime` - Datums-Verwaltung
+- `os` - Dateisystem-Prüfung
+
+### Funktionsweise:
+1. Aktuelles Datum abrufen
+2. kWh-Eingabe vom Nutzer
+3. Ersparnis berechnen (kWh × Preis)
+4. CSV-Datei prüfen (existiert/leer?)
+5. Header einfügen falls nötig
+6. Daten anhängen
+
+---
+
+## 📈 Erweiterungsmöglichkeiten
+
+**Mögliche Verbesserungen:**
+- [ ] Monats-/Jahres-Statistiken
+- [ ] Grafische Auswertung (matplotlib)
+- [ ] Automatischer Abruf von Wechselrichter-Daten
+- [ ] Vergleich mit Vormonaten
+- [ ] Export als PDF-Report
+- [ ] Web-Interface mit Flask
+
+---
+
+## 🏠 Homelab-Integration
+
+**Aktuell:** Manuelle Eingabe  
+**Geplant:** Automatischer Abruf vom Wechselrichter via API
+
+**Mein Setup:**
+- Solaranlage auf dem Dach
+- Wechselrichter mit Netzwerk-Anbindung
+- Raspberry Pi 5 als Homelab-Server
+
+---
+
+## 💡 Lernreise
+
+Dieses Tool war eines meiner ersten Python-Projekte beim Lernen von:
+- Input/Output
+- Variablen & Datentypen
+- Datei-Operationen
+- Error-Handling
+- CSV-Export
+
+**Teil von:** [Python Learning Journey](https://github.com/MCCMDave/python-learning)
+
+---
+
+## 🔗 Verwandte Projekte
+
+- [Service Monitor](../service-monitor/) - Homelab Service Überwachung
+- [Python Learning](https://github.com/MCCMDave/python-learning) - Meine Lernreise
+
+---
+
+## 👨‍💻 Autor
+
+**David Vaupel**  
+Homelab-Enthusiast | Python-Lerner | Linux Essentials Zertifiziert
+
+---
+
+**Status:** ✅ Produktionsreif | In täglicher Nutzung  
+**Version:** 1.0  
+**Letzte Aktualisierung:** November 2025

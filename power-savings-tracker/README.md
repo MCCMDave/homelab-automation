@@ -1,177 +1,154 @@
 # ⚡ Power Savings Tracker
 
-Ein einfaches Python-Tool zur Berechnung der Stromkosten-Ersparnis durch Solarstromerzeugung.
+**[🇩🇪 Deutsche Version](README_DE.md)** | 🇬🇧 English Version
 
 ---
 
-## 📖 Beschreibung
+A simple Python tool to calculate electricity cost savings from solar power generation.
 
-Dieses Tool berechnet die tägliche Stromkosten-Ersparnis basierend auf der erzeugten Solarstrom-Menge (kWh) und speichert die Historie in einer CSV-Datei.
+---
+
+## 📖 Description
+
+This tool calculates electricity cost savings based on solar power generation (kWh) and stores the history in a CSV file.
 
 ---
 
 ## ✨ Features
 
-- ✅ Berechnung der Ersparnis basierend auf aktuellem Strompreis
-- ✅ Automatische CSV-Export mit Historie
-- ✅ Header-Erstellung bei neuer Datei
-- ✅ Datums-Stempel für jede Messung
-- ✅ Input-Validierung (nur Zahlen)
-- ✅ Error-Handling für ungültige Eingaben
+- ✅ Calculate savings based on current electricity price
+- ✅ Automatic CSV export with history
+- ✅ Header creation for new files
+- ✅ Date stamp for each measurement
+- ✅ Input validation (numbers only)
+- ✅ Error handling for invalid inputs
 
 ---
 
-## 🚀 Installation & Nutzung
+## 🚀 Installation & Usage
 
-### Voraussetzungen:
-- Python 3.7 oder höher
+### Requirements:
+- Python 3.7 or higher
 
-### Ausführung:
+### Execution:
 ```bash
 python power_savings_tracker.py
 ```
 
-### Bedienung:
-1. Programm starten
-2. Erzeugte kWh eingeben
-3. Ersparnis wird angezeigt
-4. Daten werden in `historie.csv` gespeichert
-5. ENTER drücken zum Beenden
+### Usage:
+1. Start program
+2. Enter generated kWh
+3. Savings are displayed
+4. Data saved to `historie.csv`
+5. Press ENTER to exit
 
 ---
 
-## 📊 Beispiel-Ausgabe
+## 📊 Example Output
 
 ```
-Wie viel kWh wurden erzeugt? 12.5
+How many kWh were generated? 12.5
 
-Am 16.11.25 beträgt die Strompreis-Ersparnis: 3.65€ 
+On 16.11.25 the electricity cost savings are: 3.65€
 
-Drücke ENTER, zum Schließen des Fensters.
+Press ENTER to close the window.
 ```
 
 ---
 
-## 📁 Datei-Struktur
+## 📁 File Structure
 
-### Erzeugte Dateien:
-- **historie.csv** - Speichert alle Messungen mit Datum
+### Generated Files:
+- **historie.csv** - Stores all measurements with date
 
-### CSV-Format:
+### CSV Format:
 ```csv
-Datum; kWh; Ersparnis in €
+Date; kWh; Savings in €
 16.11.25; 12.50; 3.65
 17.11.25; 15.20; 4.43
 ```
 
 ---
 
-## ⚙️ Konfiguration
+## ⚙️ Configuration
 
-### Strompreis anpassen:
+### Adjust Electricity Price:
 ```python
-# Zeile 5 in power_savings_tracker.py:
-price = 0.2916  # Aktueller Strompreis in €/kWh
+# Line 5 in power_savings_tracker.py:
+price = 0.2916  # Current electricity price in €/kWh
 ```
 
-**Aktueller Preis:** 0,2916 €/kWh (Stand: November 2025)
+**Current Price:** 0.2916 €/kWh (as of November 2025)
 
 ---
 
-## 🛠️ Technische Details
+## 🛠️ Technical Details
 
-### Genutzte Module:
-- `datetime` - Datums-Verwaltung
-- `os` - Dateisystem-Prüfung
+### Modules Used:
+- `datetime` - Date management
+- `os` - Filesystem checks
 
-### Funktionsweise:
-1. Aktuelles Datum abrufen
-2. kWh-Eingabe vom Nutzer
-3. Ersparnis berechnen (kWh × Preis)
-4. CSV-Datei prüfen (existiert / leer?)
-5. Header einfügen falls nötig
-6. Daten anhängen
-
----
-
-## 📈 Erweiterungsmöglichkeiten
-
-**Mögliche Verbesserungen:**
-- [ ] Monats-/Jahres-Statistiken
-- [ ] Grafische Auswertung (matplotlib)
-- [ ] Automatischer Abruf von Wechselrichter-Daten
-- [ ] Vergleich mit Vormonaten
-- [ ] Export als PDF-Report
-- [ ] Web-Interface mit Flask
+### How It Works:
+1. Get current date
+2. kWh input from user
+3. Calculate savings (kWh × price)
+4. Check if CSV exists/empty
+5. Add header if needed
+6. Append data
 
 ---
 
-## 🏠 Homelab-Integration
+## 📈 Future Enhancements
 
-**Aktuell:** Manuelle Eingabe  
-**Geplant:** Automatischer Abruf vom Wechselrichter via API
-
-**Mein Setup:**
-- Solaranlage auf dem Dach
-- Wechselrichter mit Netzwerk-Anbindung
-- Raspberry Pi 5 als Homelab-Server
+**Possible Improvements:**
+- [ ] Monthly/yearly statistics
+- [ ] Graphical analysis (matplotlib)
+- [ ] Automatic data retrieval from inverter
+- [ ] Comparison with previous months
+- [ ] PDF report export
+- [ ] Web interface with Flask
 
 ---
 
-## 📝 Entstehung
+## 🏠 Homelab Integration
 
-Dieses Tool war eines meiner ersten Python-Projekte beim Lernen von:
+**Current:** Manual input  
+**Planned:** Automatic retrieval from inverter via API
+
+**My Setup:**
+- Solar panels on roof
+- Inverter with network connectivity
+- Raspberry Pi 5 as homelab server
+
+---
+
+## 💡 Learning Journey
+
+This tool was one of my first Python projects while learning:
 - Input/Output
-- Variablen & Datentypen
-- Datei-Operationen
-- Error-Handling
-- CSV-Export
+- Variables & data types
+- File operations
+- Error handling
+- CSV export
 
-**Teil von:** [Python Learning Journey](https://github.com/MCCMDave/python-learning)
-
----
-
-## 💡 Lessons Learned
-
-- **Try-Except:** Robuste Input-Validierung
-- **With-Statement:** Sicherer Datei-Zugriff
-- **F-Strings:** Formatierte Ausgaben
-- **CSV-Handling:** Header-Verwaltung
-- **OS-Modul:** Dateisystem-Checks
+**Part of:** [Python Learning Journey](https://github.com/MCCMDave/python-learning)
 
 ---
 
-## 📊 Historie-Beispiel
+## 🔗 Related Projects
 
-Nach einem Monat sieht die CSV so aus:
-
-```csv
-Datum; kWh; Ersparnis in €
-01.11.25; 8.50; 2.48
-02.11.25; 12.30; 3.59
-03.11.25; 15.80; 4.61
-...
-30.11.25; 11.20; 3.27
-
-Gesamt: 340 kWh = 99.14€ Ersparnis! 💰
-```
+- [Service Monitor](../service-monitor/) - Homelab service monitoring
+- [Python Learning](https://github.com/MCCMDave/python-learning) - My learning journey
 
 ---
 
-## 🔗 Verwandte Projekte
+## 👨‍💻 Author
 
-- [Service Monitor](../service-monitor/) - Homelab Service Überwachung
-- [Python Learning](https://github.com/MCCMDave/python-learning) - Meine Lernreise
-
----
-
-## 👨‍💻 Autor
-
-**Dave Vaupel**  
-Homelab-Enthusiast | Python-Lerner | Linux Essentials Certified
+**David Vaupel**  
+Homelab Enthusiast | Python Learner | Linux Essentials Certified
 
 ---
 
-**Status:** ✅ Funktionsfähig | In produktiver Nutzung  
+**Status:** ✅ Production-Ready | In Daily Use  
 **Version:** 1.0  
-**Letzte Änderung:** November 2025
+**Last Updated:** November 2025
